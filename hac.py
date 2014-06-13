@@ -6,12 +6,12 @@ def distance2D(p1, p2):
 	return math.sqrt(a * a + b * b)
 
 def distanceCluster(cluster1, cluster2):
-	# return distanceClusterSingleLink(cluster1, cluster2)
+	return distanceClusterSingleLinkage(cluster1, cluster2)
 	# return distanceClusterCompleteLink(cluster1, cluster2)
-	return distanceClusterCompleteLinkage(cluster1, cluster2)
+	#return distanceClusterCompleteLinkage(cluster1, cluster2)
 
 
-def distanceClusterSingleLink(cluster1, cluster2):
+def distanceClusterSingleLinkage(cluster1, cluster2):
 	res = 10000 # MAX
 
 	for p1 in cluster1:
@@ -21,7 +21,7 @@ def distanceClusterSingleLink(cluster1, cluster2):
 				res = d
 	return res
 
-def distanceClusterCompleteLink(cluster1, cluster2):
+def distanceClusterCompleteLinkage(cluster1, cluster2):
 	res = -1 # MIN
 
 	for p1 in cluster1:
@@ -31,7 +31,8 @@ def distanceClusterCompleteLink(cluster1, cluster2):
 				res = d
 	return res
 
-def distanceClusterCompleteLinkage(cluster1, cluster2):
+
+def distanceClusterCentroidLinkage(cluster1, cluster2):
 	x1 = 0
 	x2 = 0
 	y1 = 0
